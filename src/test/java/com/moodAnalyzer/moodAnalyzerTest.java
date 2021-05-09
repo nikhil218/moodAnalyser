@@ -14,7 +14,7 @@ public class moodAnalyzerTest {
 
     @Test
     public void messageReturnHappy() {
-        String message = "Today I am ain a good mood";
+        String message = "null";
         moodAnalyzer mood = new moodAnalyzer(message);
         String message1 = mood.analyzeMood();
         Assert.assertEquals("Happy", message1);
