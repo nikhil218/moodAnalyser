@@ -1,22 +1,19 @@
 package com.moodAnalyzer;
 
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class moodAnalyzerTest {
-
-    @Test
-    public void messageReturnsSad() {
-        String message = "I am feeling sad";
-        moodAnalyzer mood = new moodAnalyzer(message) ;
-        String message1 = mood.analyzeMood();
-        Assert.assertEquals("Sad", message1);
-    }
+public class MoodAnalyserTest {
 
     @Test
-    public void messageReturnHappy() {
-        String message = "null";
-        moodAnalyzer mood = new moodAnalyzer(message);
-        String message1 = mood.analyzeMood();
-        Assert.assertEquals("Happy", message1);
+    public void givenMessageReturnHappy() {
+        moodAnalyser mood = new moodAnalyser(null);
+
+        try {
+            mood.analyseMood();
+        }
+        catch(MoodAnalysisException e){
+            Assert.assertEquals("Please Enter a right input", e.getMessage());
+        }
     }
 }
